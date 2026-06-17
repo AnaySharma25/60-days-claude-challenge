@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Vehicle Cost & Fuel Analysis Dashboard</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0a0f1e;
+color:white;
+padding:20px;
+}
+
+.header{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+padding:18px;
+border-radius:15px;
+backdrop-filter:blur(8px);
+}
+
+.card h3{
+font-size:14px;
+color:#cfcfcf;
+margin-bottom:10px;
+}
+
+.card p{
+font-size:24px;
+font-weight:bold;
+}
+
+.section{
+margin-top:25px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+th,td{
+padding:12px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+th{
+background:#141d33;
+}
+
+.petrol{color:#4da3ff;}
+.diesel{color:#bdbdbd;}
+.cng{color:#33cc66;}
+.ev{color:#b066ff;}
+.e85{color:#ffb020;}
+
+.bar{
+height:22px;
+border-radius:20px;
+margin-top:6px;
+}
+
+.blue{background:#4da3ff;}
+.grey{background:#bdbdbd;}
+.green{background:#33cc66;}
+.purple{background:#b066ff;}
+.amber{background:#ffb020;}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<h1>🚗 AI Vehicle Cost & Fuel Analysis Dashboard</h1>
+<p>Dataset: day17_e85_dataset_optimised.csv</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Petrol Cost / KM</h3>
+<p>₹6.21</p>
+</div>
+
+<div class="card">
+<h3>E85 Cost / KM</h3>
+<p>₹6.37</p>
+</div>
+
+<div class="card">
+<h3>EV Cost / KM</h3>
+<p>₹1.75</p>
+</div>
+
+<div class="card">
+<h3>Lowest CO₂ / KM</h3>
+<p>E85</p>
+</div>
+
+<div class="card">
+<h3>Average Refuel Time</h3>
+<p>5 Min</p>
+</div>
+
+</div>
+
+<div class="section">
+<h2>Fuel Cost Comparison (₹/KM)</h2>
+
+<p class="ev">Electric (EV) - ₹1.75</p>
+<div class="bar purple" style="width:18%"></div>
+
+<p class="cng">CNG - ₹3.34</p>
+<div class="bar green" style="width:34%"></div>
+
+<p class="diesel">Diesel - ₹4.62</p>
+<div class="bar grey" style="width:46%"></div>
+
+<p class="petrol">Petrol (E20) - ₹6.21</p>
+<div class="bar blue" style="width:62%"></div>
+
+<p class="e85">E85 Flex Fuel - ₹6.37</p>
+<div class="bar amber" style="width:64%"></div>
+</div>
+
+<div class="section">
+<h2>Fuel Summary Table</h2>
+
+<table>
+<tr>
+<th>Fuel Type</th>
+<th>Cost/KM</th>
+<th>CO₂/KM</th>
+<th>Maint./KM</th>
+<th>Refuel Time</th>
+</tr>
+
+<tr>
+<td>CNG</td>
+<td>₹3.34</td>
+<td>0.125</td>
+<td>₹0.63</td>
+<td>8 Min</td>
+</tr>
+
+<tr>
+<td>Diesel</td>
+<td>₹4.62</td>
+<td>0.177</td>
+<td>₹0.89</td>
+<td>5 Min</td>
+</tr>
+
+<tr>
+<td>Petrol (E20)</td>
+<td>₹6.21</td>
+<td>0.172</td>
+<td>₹0.41</td>
+<td>5 Min</td>
+</tr>
+
+<tr>
+<td>E85</td>
+<td>₹6.37</td>
+<td>0.069</td>
+<td>₹0.43</td>
+<td>5 Min</td>
+</tr>
+
+<tr>
+<td>Electric (EV)</td>
+<td>₹1.75</td>
+<td>0.091</td>
+<td>₹0.21</td>
+<td>45 Min</td>
+</tr>
+
+</table>
+</div>
+
+<div class="section">
+<div class="card">
+<h2>E85 Analysis</h2>
+<br>
+<p>Pump Saving vs Petrol: 18%</p>
+<br>
+<p>Break-Even Price: ₹79.18</p>
+<br>
+<p>E85 Score: 7.8 / 10</p>
+</div>
+</div>
+
+<div class="section">
+<div class="card">
+<h2>Key Findings</h2>
+<br>
+<p>✅ EV has the lowest running cost.</p>
+<p>✅ E85 has the lowest CO₂ emissions.</p>
+<p>✅ CNG provides a balanced cost advantage.</p>
+<p>⚠ Diesel has the highest maintenance burden.</p>
+<p>⚠ EV charging time is significantly higher.</p>
+</div>
+</div>
+
+</body>
+</html>
