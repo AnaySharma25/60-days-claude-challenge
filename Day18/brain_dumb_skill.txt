@@ -1,0 +1,4 @@
+Skill Name: brain-dump-action-planner
+
+Description:
+Convert unstructured notes, meeting discussions, class notes, voice transcripts, brainstorming sessions, and project thoughts into a structured action plan with priorities, risks, blockers, timelines, and next steps.
