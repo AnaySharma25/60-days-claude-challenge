@@ -1,0 +1,748 @@
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+background:#0b1020;
+color:#fff;
+padding:20px;
+}
+
+.dashboard{
+max-width:1400px;
+margin:auto;
+}
+
+.header{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+padding:25px;
+border-radius:20px;
+margin-bottom:20px;
+border:1px solid rgba(255,255,255,0.1);
+}
+
+.header h1{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.header p{
+color:#b0b8d1;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-bottom:20px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:20px;
+padding:20px;
+backdrop-filter:blur(10px);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.score{
+font-size:42px;
+font-weight:bold;
+margin-top:10px;
+}
+
+.green{
+color:#3ee98a;
+}
+
+.yellow{
+color:#ffd84d;
+}
+
+.orange{
+color:#ff914d;
+}
+
+.red{
+color:#ff5c5c;
+}
+
+.section{
+background:rgba(255,255,255,.04);
+padding:20px;
+margin-bottom:20px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.section h2{
+margin-bottom:20px;
+color:#6ea8ff;
+}
+
+.heatmap{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+}
+
+.box{
+padding:25px;
+border-radius:12px;
+text-align:center;
+font-weight:bold;
+}
+
+.high{
+background:#ff4d4d;
+}
+
+.medium{
+background:#ffae42;
+}
+
+.low{
+background:#2ecc71;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+table th{
+background:#101a35;
+padding:15px;
+}
+
+table td{
+padding:15px;
+border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.radar{
+display:flex;
+justify-content:center;
+align-items:center;
+height:300px;
+}
+
+.circle{
+width:220px;
+height:220px;
+border-radius:50%;
+border:4px solid #4d7cff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+font-weight:bold;
+}
+
+.assets{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+}
+
+.asset{
+padding:20px;
+background:#11192f;
+border-radius:15px;
+}
+
+.simulator{
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+button{
+background:#4d7cff;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+cursor:pointer;
+}
+
+button:hover{
+background:#3568ff;
+}
+
+.final{
+text-align:center;
+padding:40px;
+background:linear-gradient(135deg,#13244d,#091324);
+border-radius:20px;
+}
+
+.progress{
+height:12px;
+background:#1d2b52;
+border-radius:50px;
+overflow:hidden;
+margin-top:10px;
+}
+
+.bar{
+height:100%;
+background:#3ee98a;
+width:65%;
+}
+</style>
+
+<div class="dashboard">
+
+<div class="header">
+<h1>🔒 Digital Privacy & Footprint Intelligence Dashboard</h1>
+<p>Interactive Privacy Intelligence Report based on reported digital services usage</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Digital Footprint Score</h3>
+<div class="score orange">78</div>
+<p>Significant</p>
+<div class="progress">
+<div class="bar" style="width:78%"></div>
+</div>
+</div>
+
+<div class="card">
+<h3>Privacy Score</h3>
+<div class="score yellow">64</div>
+<p>Good</p>
+<div class="progress">
+<div class="bar" style="width:64%"></div>
+</div>
+</div>
+
+<div class="card">
+<h3>Total Services Used</h3>
+<div class="score">15</div>
+<p>Fact</p>
+</div>
+
+<div class="card">
+<h3>Parent Companies</h3>
+<div class="score">10</div>
+<p>Estimated</p>
+</div>
+
+</div>
+
+<!-- Exposure Heatmap -->
+
+<div class="section">
+
+<h2>🔥 Exposure Heatmap</h2>
+
+<div class="heatmap">
+
+<div class="box high">
+Social Media
+<br><br>
+Very High
+</div>
+
+<div class="box high">
+Communication
+<br><br>
+High
+</div>
+
+<div class="box medium">
+Shopping
+<br><br>
+Medium
+</div>
+
+<div class="box high">
+Entertainment
+<br><br>
+High
+</div>
+
+<div class="box high">
+Search Activity
+<br><br>
+Very High
+</div>
+
+<div class="box medium">
+Payments
+<br><br>
+Medium
+</div>
+
+<div class="box high">
+Gaming
+<br><br>
+High
+</div>
+
+<div class="box high">
+Cloud Photos
+<br><br>
+Very High
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Company Exposure Ranking -->
+
+<div class="section">
+
+<h2>🏢 Company Exposure Ranking</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Rank</th>
+<th>Company</th>
+<th>Services</th>
+<th>Exposure Score</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>1</td>
+<td>Google</td>
+<td>Search, Pay, Photos, YouTube</td>
+<td>95%</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Meta</td>
+<td>Instagram, WhatsApp</td>
+<td>90%</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>ByteDance</td>
+<td>TikTok</td>
+<td>82%</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Amazon</td>
+<td>Amazon Shopping</td>
+<td>75%</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>Snap Inc.</td>
+<td>Snapchat</td>
+<td>72%</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>Discord</td>
+<td>Discord</td>
+<td>68%</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>Spotify</td>
+<td>Spotify</td>
+<td>64%</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>Apple</td>
+<td>iMessage</td>
+<td>60%</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<!-- Data Collection Matrix -->
+
+<div class="section">
+
+<h2>📊 Data Collection Matrix</h2>
+
+<table>
+
+<thead>
+<tr>
+<th>Data Type</th>
+<th>Collection Likelihood</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Location Data</td>
+<td>High</td>
+<td class="red">Extensive</td>
+</tr>
+
+<tr>
+<td>Search History</td>
+<td>Very High</td>
+<td class="red">Extensive</td>
+</tr>
+
+<tr>
+<td>Purchase History</td>
+<td>High</td>
+<td class="orange">Significant</td>
+</tr>
+
+<tr>
+<td>Communication Metadata</td>
+<td>High</td>
+<td class="orange">Significant</td>
+</tr>
+
+<tr>
+<td>Device Information</td>
+<td>High</td>
+<td class="orange">Significant</td>
+</tr>
+
+<tr>
+<td>Entertainment Preferences</td>
+<td>Very High</td>
+<td class="red">Extensive</td>
+</tr>
+
+<tr>
+<td>Social Connections</td>
+<td>High</td>
+<td class="orange">Significant</td>
+</tr>
+
+<tr>
+<td>Payment Behaviour</td>
+<td>Medium</td>
+<td class="yellow">Moderate</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<!-- Risk Radar -->
+
+<div class="section">
+
+<h2>🎯 Risk Radar</h2>
+
+<div class="radar">
+
+<div class="circle">
+Risk Level
+<br>
+78%
+</div>
+
+</div>
+
+<table>
+
+<tr>
+<td>Cross-Platform Tracking</td>
+<td class="red">High</td>
+</tr>
+
+<tr>
+<td>Advertising Profiling</td>
+<td class="red">High</td>
+</tr>
+
+<tr>
+<td>Account Correlation</td>
+<td class="orange">Medium-High</td>
+</tr>
+
+<tr>
+<td>Behavioral Prediction</td>
+<td class="orange">Medium</td>
+</tr>
+
+<tr>
+<td>Identity Exposure</td>
+<td class="orange">Medium</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- Digital Twin Profile -->
+
+<div class="section">
+
+<h2>🧠 Digital Twin Profile</h2>
+
+<h3>Facts</h3>
+
+<ul style="padding-left:20px;line-height:2;">
+<li>Uses Instagram, Snapchat, TikTok and Discord.</li>
+<li>Uses WhatsApp and iMessage for communication.</li>
+<li>Uses Google Search, Google Pay and Google Photos.</li>
+<li>Uses Amazon and Meesho for shopping.</li>
+<li>Uses Spotify, YouTube and gaming platforms.</li>
+</ul>
+
+<br>
+
+<h3>Estimates</h3>
+
+<ul style="padding-left:20px;line-height:2;">
+<li>Likely active on social media platforms.</li>
+<li>Likely interested in digital content consumption.</li>
+<li>Possible gaming and entertainment enthusiast.</li>
+<li>Possible online shopping behavior.</li>
+<li>May have a broad digital footprint across multiple ecosystems.</li>
+</ul>
+
+<p style="margin-top:15px;color:#b0b8d1;">
+⚠ These are estimates only and not confirmed facts.
+</p>
+
+</div>
+
+
+<!-- Most Valuable Data Assets -->
+
+<div class="section">
+
+<h2>💎 Most Valuable Data Assets</h2>
+
+<div class="assets">
+
+<div class="asset">
+📍 Location Patterns
+</div>
+
+<div class="asset">
+🛒 Shopping History
+</div>
+
+<div class="asset">
+🔍 Search Activity
+</div>
+
+<div class="asset">
+📸 Photo Library
+</div>
+
+<div class="asset">
+👥 Social Graph
+</div>
+
+<div class="asset">
+💳 Payment Behaviour
+</div>
+
+<div class="asset">
+🎵 Entertainment Preferences
+</div>
+
+<div class="asset">
+📱 Device Metadata
+</div>
+
+</div>
+
+</div>
+
+
+<!-- WOW Insights -->
+
+<div class="section">
+
+<h2>🚀 WOW Insights</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Largest Exposure Source</h3>
+<p style="margin-top:10px;">
+Google Ecosystem
+</p>
+</div>
+
+<div class="card">
+<h3>Most Connected Category</h3>
+<p style="margin-top:10px;">
+Social Media
+</p>
+</div>
+
+<div class="card">
+<h3>Highest Data Value</h3>
+<p style="margin-top:10px;">
+Search & Photos
+</p>
+</div>
+
+<div class="card">
+<h3>Tracking Surface</h3>
+<p style="margin-top:10px;">
+High
+</p>
+</div>
+
+</div>
+
+<p style="margin-top:20px;line-height:1.8;">
+Based on the reported services, the largest concentration of digital activity appears within Google and Meta ecosystems. This may increase ecosystem concentration and tracking opportunities across multiple services.
+</p>
+
+</div>
+
+<!-- Privacy Improvement Simulator -->
+
+<div class="section">
+
+<h2>🛡 Privacy Improvement Simulator</h2>
+
+<div class="simulator">
+
+<div class="card">
+<h3>Current Privacy Score</h3>
+<div class="score orange">64</div>
+</div>
+
+<div class="card">
+<h3>Enable Two-Factor Authentication</h3>
+<p>Estimated Improvement: +8 Points</p>
+</div>
+
+<div class="card">
+<h3>Review App Permissions</h3>
+<p>Estimated Improvement: +10 Points</p>
+</div>
+
+<div class="card">
+<h3>Limit Ad Tracking</h3>
+<p>Estimated Improvement: +12 Points</p>
+</div>
+
+<div class="card">
+<h3>Remove Unused Accounts</h3>
+<p>Estimated Improvement: +6 Points</p>
+</div>
+
+<div class="card">
+<h3>Use Privacy-Focused Browser</h3>
+<p>Estimated Improvement: +7 Points</p>
+</div>
+
+<div class="card">
+<h3>Projected Privacy Score</h3>
+<div class="score green">85</div>
+<p>Strong Privacy Posture</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- Final Verdict -->
+
+<div class="final">
+
+<h1>📋 Final Verdict</h1>
+
+<br>
+
+<h2>Digital Footprint: <span class="red">Extensive</span></h2>
+
+<br>
+
+<h2>Privacy Posture: <span class="orange">Fair</span></h2>
+
+<br>
+
+<p style="max-width:900px;margin:auto;line-height:1.8;color:#d0d7f2;">
+
+The reported services indicate a broad digital presence across social media,
+communication, shopping, entertainment, search, payments, and cloud ecosystems.
+
+Facts were derived directly from the provided service list.
+
+Behavioral characteristics, interests, and lifestyle observations shown elsewhere
+in this dashboard are estimates only and should not be treated as confirmed facts.
+
+No private databases were accessed and no certainty is claimed regarding inferred traits.
+
+</p>
+
+<br><br>
+
+<div class="grid">
+
+<div class="card">
+<h3>Total Services</h3>
+<div class="score">15</div>
+</div>
+
+<div class="card">
+<h3>Parent Companies</h3>
+<div class="score">10</div>
+</div>
+
+<div class="card">
+<h3>Exposure Level</h3>
+<div class="score red">High</div>
+</div>
+
+<div class="card">
+<h3>Privacy Potential</h3>
+<div class="score green">Strong</div>
+</div>
+
+</div>
+
+<br>
+
+<p style="color:#9fb0e5;">
+Generated by Digital Privacy & Footprint Intelligence Dashboard
+</p>
+
+</div>
+
+</div>
+</body>
+</html>
